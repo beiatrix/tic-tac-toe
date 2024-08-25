@@ -1,7 +1,16 @@
 import Square from './Square'
 import calculateWinner from '../utils/calculateWinner'
 
-export default function Board({ xIsNext, isLastMove, squares, onPlay }) {
+interface BoardProps {
+  xIsNext: boolean;
+  isLastMove: boolean;
+  squares: Array<string | null>;
+  onPlay: (squares: Array<string | null>) => void;
+}
+
+export default function Board(
+  { xIsNext, isLastMove, squares, onPlay }: BoardProps
+) {
   // display helpers
   const rows = Array(3).fill(null);
   const cols = Array(3).fill(null);
@@ -38,11 +47,7 @@ export default function Board({ xIsNext, isLastMove, squares, onPlay }) {
             <Square 
               key={(rowIndex * 3) + colIndex + 1}
               value={squares[(rowIndex * 3) + colIndex]}
-              isWinningMove={
-                winningMove?.includes((rowIndex * 3) + colIndex) 
-                  ? 'winning-square' 
-                  : ''
-              }
+              isWinningMove={winningMove?.includes((rowIndex * 3) + colIndex)}
               onSquareClick={() => handleClick((rowIndex * 3) + colIndex)}
             />
           ))}
