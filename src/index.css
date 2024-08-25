@@ -131,6 +131,10 @@ button:focus-visible {
   margin-bottom: 6px;
 }
 
+.winning-move {
+  color: lawngreen;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

@@ -1,7 +1,7 @@
-export default function Square({ value, onSquareClick }) {
+export default function Square({ value, onSquareClick, isWinningMove }) {
   return (
     <button 
-      className="square"
+      className={isWinningMove ? 'winning-move square' : 'square'}
       onClick={onSquareClick}
     >
       {value}
