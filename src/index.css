@@ -27,7 +27,7 @@ a:hover {
 }
 
 body {
-  margin: 20px;
+  margin: 0;
   padding: 0;
   display: flex;
   place-items: center;
@@ -98,7 +98,10 @@ ul {
 }
 .game {
   display: flex;
+  justify-content: center;
   flex-direction: row;
+  height: 50vh;
+  width: 100vw;
 }
 
 .game-info {
@@ -121,6 +124,11 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn-move {
+  border-radius: 6px;
+  margin-bottom: 6px;
 }
 
 @media (prefers-color-scheme: light) {
